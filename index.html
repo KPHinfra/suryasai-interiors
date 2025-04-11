@@ -28,14 +28,14 @@
         /* Header */
         .header {
             background-color: #ffffff;
-            padding: 20px 0;
-            box-shadow: none;
+            padding: 12px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
 
         .nav-container {
             max-width: 1400px;
             margin: 0 auto;
-            padding: 0 40px;
+            padding: 0 30px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -45,44 +45,93 @@
             display: flex;
             align-items: center;
             gap: 15px;
-            margin-right: 100px;
+            margin-right: 80px;
         }
 
         .logo-icon {
-            width: 45px;
-            height: 45px;
-            border: 1.5px solid #e8c07d;
+            width: 85px;
+            height: 85px;
             display: flex;
             align-items: center;
             justify-content: center;
+            margin-top: 0;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
         }
 
-        .ss-text {
-            font-family: 'Playfair Display', serif;
-            color: #e8c07d;
-            font-size: 24px;
-            font-weight: 500;
+        .logo-icon svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .logo-icon svg path {
+            transition: all 0.3s ease;
+        }
+
+        .logo-icon:hover svg path {
+            stroke-width: 2.5;
+            stroke: #6b563c;
+        }
+
+        .logo-icon:hover svg path {
+            stroke-width: 2.5;
+            stroke: #6b563c;
         }
 
         .logo-text {
             display: flex;
             flex-direction: column;
+            gap: 2px;
+            margin-top: -5px;
         }
 
         .logo-text h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 28px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 32px;
             color: #333;
             margin: 0;
             font-weight: 600;
+            letter-spacing: 0.5px;
+            line-height: 1;
         }
 
         .logo-text span {
             font-family: 'Poppins', sans-serif;
-            font-size: 14px;
+            font-size: 13px;
             color: #666;
-            letter-spacing: 3px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
             margin-top: 2px;
+        }
+
+        .subtitle-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 2px;
+        }
+
+        .divider {
+            color: #9a8a78;
+            font-size: 14px;
+        }
+
+        .header-phone-inline {
+            color: #9a8a78;
+            text-decoration: none;
+            font-size: 13px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-weight: 500;
+        }
+
+        .header-phone-inline i {
+            color: #9a8a78;
+            font-size: 12px;
+        }
+
+        .header-phone-inline:hover {
+            color: #e8c07d;
         }
 
         /* Navigation Styles */
@@ -291,12 +340,17 @@
                 margin-right: 0;
             }
 
+            .logo-icon {
+                width: 70px;
+                height: 70px;
+            }
+
             .logo-text h1 {
-                font-size: 24px;
+                font-size: 32px;
             }
 
             .logo-text span {
-                font-size: 12px;
+                font-size: 14px;
             }
 
             /* Hamburger Menu for Mobile */
@@ -383,6 +437,20 @@
             .cta-button {
                 padding: 12px 20px;
                 font-size: 14px;
+            }
+
+            .header-phone {
+                font-size: 14px;
+            }
+
+            .subtitle-container {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 5px;
+            }
+            
+            .divider {
+                display: none;
             }
         }
 
@@ -650,6 +718,191 @@
         .form-hidden {
             display: none;
         }
+
+        /* Mobile Menu Styles */
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: #333;
+            font-size: 24px;
+            cursor: pointer;
+            padding: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 80px;
+                left: 0;
+                right: 0;
+                background: white;
+                padding: 20px;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+                flex-direction: column;
+                gap: 20px;
+                z-index: 1000;
+            }
+
+            .nav-menu.active {
+                display: flex;
+            }
+
+            .nav-menu a {
+                color: #333;
+                padding: 10px;
+                width: 100%;
+                text-align: center;
+            }
+
+            .nav-menu a:hover {
+                background: #f5f5f5;
+            }
+        }
+
+        /* Top Contact Bar */
+        .top-contact-bar {
+            background-color: #333;
+            color: white;
+            padding: 8px 0;
+            position: relative;
+            z-index: 1000;
+        }
+
+        .contact-info {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .contact-info a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: color 0.3s ease;
+        }
+
+        .contact-info a:hover {
+            color: #e8c07d;
+        }
+
+        .contact-info i {
+            color: #e8c07d;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .contact-info {
+                justify-content: center;
+                padding: 0 20px;
+                flex-wrap: wrap;
+                gap: 15px;
+            }
+
+            .contact-info a {
+                font-size: 12px;
+            }
+        }
+
+        /* Updated Floating Contact Buttons */
+        .floating-buttons {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .floating-contact {
+            display: flex;
+            align-items: center;
+            padding: 12px 20px;
+            border-radius: 30px;
+            color: white;
+            text-decoration: none;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+        }
+
+        .floating-contact i {
+            font-size: 20px;
+            margin-right: 8px;
+        }
+
+        .floating-contact.phone {
+            background-color: #e8c07d;
+        }
+
+        .floating-contact.whatsapp {
+            background-color: #25D366;
+        }
+
+        .floating-contact:hover {
+            transform: translateX(-10px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        .floating-text {
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .floating-buttons {
+                bottom: 15px;
+                right: 15px;
+            }
+
+            .floating-contact {
+                padding: 10px 16px;
+            }
+
+            .floating-text {
+                font-size: 12px;
+            }
+        }
+
+        /* Add this to your existing styles */
+        .header-phone {
+            color: #9a8a78;
+            text-decoration: none;
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 5px;
+            font-weight: 500;
+        }
+
+        .header-phone i {
+            color: #9a8a78;
+            font-size: 13px;
+        }
+
+        .header-phone:hover {
+            color: #e8c07d;
+        }
+
+        /* Update mobile styles */
+        @media (max-width: 768px) {
+            .header-phone {
+                font-size: 14px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -657,16 +910,44 @@
         <div class="nav-container">
             <div class="logo">
                 <div class="logo-icon">
-                    <span class="ss-text">SS</span>
+                    <svg width="85" height="85" viewBox="0 0 100 100">
+                        <!-- House shape -->
+                        <path d="M25 40 L50 20 L75 40 L75 80 L25 80 L25 40" 
+                              fill="white"
+                              stroke="#8b7355"
+                              stroke-width="2.5"/>
+                        <!-- Door -->
+                        <path d="M45 80 L45 65 L55 65 L55 80" 
+                              fill="white"
+                              stroke="#8b7355"
+                              stroke-width="2.5"/>
+                        <!-- White background for SS text -->
+                        <circle cx="50" cy="58" r="22" 
+                                fill="white"/>
+                        <!-- SS text -->
+                        <text x="50%" y="58%" 
+                              text-anchor="middle" 
+                              dominant-baseline="middle" 
+                              fill="#222222" 
+                              font-family="serif"
+                              font-weight="bold"
+                              font-size="38">SS</text>
+                    </svg>
                 </div>
                 <div class="logo-text">
                     <h1>SURYA SAI</h1>
-                    <span>HOME INTERIOR</span>
+                    <div class="subtitle-container">
+                        <span>HOME INTERIOR</span>
+                        <span class="divider">|</span>
+                        <a href="tel:+919441075065" class="header-phone-inline">
+                            <i class="fas fa-phone"></i> +91 94410 75065
+                        </a>
+                    </div>
                 </div>
             </div>
-            <div class="menu-toggle" id="menuToggle">
+            <button class="menu-toggle" id="menuToggle">
                 <i class="fas fa-bars"></i>
-            </div>
+            </button>
             <nav class="nav-menu">
                 <a href="#home">Home</a>
                 <a href="#services">Services</a>
@@ -869,6 +1150,17 @@
         </div>
     </footer>
 
+    <div class="floating-buttons">
+        <a href="tel:+919441075065" class="floating-contact phone">
+            <i class="fas fa-phone"></i>
+            <span class="floating-text">Call Us</span>
+        </a>
+        <a href="https://wa.me/919441075065" class="floating-contact whatsapp">
+            <i class="fab fa-whatsapp"></i>
+            <span class="floating-text">WhatsApp</span>
+        </a>
+    </div>
+
     <script>
         // Portfolio Filtering
         const filterButtons = document.querySelectorAll('.filter-btn');
@@ -961,6 +1253,47 @@
 
         // Add this to your existing script.js or in a script tag
         document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Mobile Menu Toggle
+        document.getElementById('menuToggle').addEventListener('click', function() {
+            const navMenu = document.querySelector('.nav-menu');
+            const icon = this.querySelector('i');
+            
+            navMenu.classList.toggle('active');
+            
+            // Toggle icon between bars and times
+            if (navMenu.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.add('fa-bars');
+                icon.classList.remove('fa-times');
+            }
+        });
+
+        // Close menu when clicking a link
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                const navMenu = document.querySelector('.nav-menu');
+                const icon = document.querySelector('.menu-toggle i');
+                
+                navMenu.classList.remove('active');
+                icon.classList.add('fa-bars');
+                icon.classList.remove('fa-times');
+            });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const navMenu = document.querySelector('.nav-menu');
+            const menuToggle = document.querySelector('.menu-toggle');
+            
+            if (!navMenu.contains(event.target) && !menuToggle.contains(event.target)) {
+                navMenu.classList.remove('active');
+                menuToggle.querySelector('i').classList.add('fa-bars');
+                menuToggle.querySelector('i').classList.remove('fa-times');
+            }
+        });
     </script>
 </body>
 </html>
