@@ -265,6 +265,22 @@
             text-align: center;
         }
 
+        .footer-content h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .footer-content p {
+            margin: 8px 0;
+            color: #ffffff;
+        }
+
+        .developer-credit {
+            margin-top: 15px;
+            font-size: 14px;
+            color: #e8c07d !important;  /* Using your brand gold color */
+        }
+
         /* Responsive Design */
         @media (max-width: 768px) {
             .nav-container {
@@ -847,8 +863,9 @@
         <div class="footer-content">
             <h3>Surya Sai Interiors</h3>
             <p>Creating beautiful spaces that inspire</p>
-            <p>Email: info@suryasaiinteriors.com | Phone: +1234567890</p>
-            <p>&copy; 2025 Surya Sai Interiors. All rights reserved.</p>
+            <p>Phone: +91 9441075065</p>
+            <p>&copy; 1999-<span id="currentYear"></span> Surya Sai Interiors. All rights reserved.</p>
+            <p class="developer-credit">Designed & Developed by K PENCHALAIAH</p>
         </div>
     </footer>
 
@@ -941,6 +958,9 @@
                 submitBtn.disabled = false;
             });
         });
+
+        // Add this to your existing script.js or in a script tag
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
     </script>
 </body>
 </html>
